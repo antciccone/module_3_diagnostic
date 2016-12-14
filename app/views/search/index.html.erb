@@ -1,1 +1,9 @@
 <h1>Top Ten Closest Gas Stations</h1>
+  <% @by_address.each do |address| %>
+  <% byebug %>
+  <%= address.name %>
+  <%= address.address %>
+  <%= address.fuel_type %>
+  <%= address.distance %>
+  <%= address.access_times %>
+<% end %>
