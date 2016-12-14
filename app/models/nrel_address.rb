@@ -1,6 +1,6 @@
 class NrelAddress
 
-  attr_reader
+  attr_reader :name, :address, :fuel_type, :distance, :access_times
   def initialize(service={})
     @name         = service[:station_name]
     @address      = service[:street_address]
@@ -11,7 +11,7 @@ class NrelAddress
 
   def self.by_address(address, token)
       NrelService.new(token).by_address(address).map do |nrel_raw|
-      NrelAddress.new(nrel_raw)
-    end
+      NrelAddress.new(nrel_raw) if nrel_raw.values.include?('ELEC') || nrel_raw.values.include?('LPG')
+    end 
   end
 end
