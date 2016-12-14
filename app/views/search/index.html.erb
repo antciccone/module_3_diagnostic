@@ -1,9 +1,10 @@
+<div class='container-fluid'>
 <h1>Top Ten Closest Gas Stations</h1>
-  <% @by_address.each do |address| %>
-  <% byebug %>
-  <%= address.name %>
-  <%= address.address %>
-  <%= address.fuel_type %>
-  <%= address.distance %>
-  <%= address.access_times %>
+  <% @by_address.compact.take(10).each do |address| %>
+  <p><%= address.name %></p>
+  <p><%= address.address %></p>
+  <p><%= address.fuel_type %></p>
+  <p><%= address.distance %></p>
+  <p><%= address.access_times %></p>
 <% end %>
+<div>
