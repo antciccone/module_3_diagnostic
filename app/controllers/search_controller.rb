@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
 
   def index
-
-  end 
+    #@by_address = NrelAddress.address(params[:q])
+  end
 end

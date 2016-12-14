@@ -6,8 +6,9 @@ describe "as s user" do
 
       visit "/"
 
-      fill_in 
-
+      fill_in :q, with: '07871'
+      click_button "Locate"
+      expect(current_path).to eq(search_path)
     end
   end
 end
