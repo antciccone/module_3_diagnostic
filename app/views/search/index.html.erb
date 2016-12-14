@@ -2,11 +2,11 @@
 <h1>Top Ten Closest Gas Stations by Distance</h1>
 <ol/>
   <% @by_address.compact.take(10).each do |address| %>
-  <li>Name:<%= address.name %></li>
-  <p>Address:<%= address.address %></p>
-  <p>Fuel Type:<%= address.fuel_type %></p>
-  <p>Distance:<%= address.distance %></p>
-  <p>Hours:<%= address.access_times %></p>
+  <p><li>Name:<%=address.name %></li></p>
+  <p>Address: <%=address.address %></p>
+  <p>Fuel Type: <%=address.fuel_type %></p>
+  <p>Distance: <%=address.distance %></p>
+  <p>Hours: <%=address.access_times %></p>
   <hr>
 <% end %>
 <ol>
