@@ -9,9 +9,9 @@ class NrelAddress
     @access_times = service[:access_days_time]
   end
 
-  def self.by_address(address, token)
-      NrelService.new(token).by_address(address).map do |nrel_raw|
-      NrelAddress.new(nrel_raw) if nrel_raw.values.include?('ELEC') || nrel_raw.values.include?('LPG')
-    end 
+  def self.by_address(address)
+      NrelService.new.by_address(address).map do |nrel_raw|
+       NrelAddress.new(nrel_raw) 
+    end
   end
 end
